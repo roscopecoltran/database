@@ -50,3 +50,8 @@ func (tbl *mongoTable) Insert(elem interface{}) error {
 	_, err := tbl.session.Collection(tbl.tableName).Insert(elem)
 	return err
 }
+
+// Find ...
+func (tbl *mongoTable) Find(elems ...interface{}) db.Result {
+	return tbl.session.Collection(tbl.tableName).Find(elems)
+}

@@ -16,6 +16,9 @@ type mongoDatabase struct {
 
 // NewDatabase ...
 func NewDatabase(databaseName string, opts ...database.Option) (database.Database, error) {
+
+	log.Debug("Using endpoints: ", Config.Endpoints)
+
 	options := database.Options{
 		Endpoints:      Config.Endpoints,
 		Username:       Config.Username,
